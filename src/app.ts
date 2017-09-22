@@ -1,5 +1,6 @@
 import { Aurelia, PLATFORM } from 'aurelia-framework';
 import { Router, RouterConfiguration } from 'aurelia-router';
+import {topNav} from 'server-args';
 
 export class App {
   router: Router;

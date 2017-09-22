@@ -7,6 +7,16 @@
   </head>
 
   <body aurelia-app="main">
+<!-- fake up some arguments injected from the server -->
+ <script>
+   System.set('server-args', System.newModule({
+     topNav: [
+       {url: '/', title: 'Big Home', isActive: true},
+       {url: '/other', title: 'Other Page'},
+     ]
+   }));
+ </script>
+
     <script src="scripts/vendor-bundle.js" data-main="aurelia-bootstrapper"></script>
   </body>
 </html>
