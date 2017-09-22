@@ -1,3 +1,13 @@
 <template>
+    <require from="components/navbar/navbar.html"></require>
   <h1>${message}</h1>
+
+    <div>
+        <navbar router.bind="router"></navbar>
+  </div>
+
+  <div>
+    <router-view></router-view>
+  </div>
+
 </template>
