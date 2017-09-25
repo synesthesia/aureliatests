@@ -13,19 +13,15 @@ declare global {
 
 import { Aurelia, PLATFORM } from 'aurelia-framework';
 import { Router, RouterConfiguration } from 'aurelia-router';
-import { Navbar } from './components/navbar/navbar';
-
 
 export class App {
   router: Router;
-  navbar: Navbar;
   message = 'Hello World!!';
   topnav: NavItem[];
   
 
   constructor(){
     this.topnav = window.serverargs.topnav;
-    this.navbar = new Navbar();
   }
 
   
@@ -54,12 +50,6 @@ export class App {
     ]);
     this.router = router;
   }
-/*
-  attached(){
-    console.debug('app.attached()');
-    this.navbar.router = this.router;
-    this.navbar.topnav = this.topnav;
-    //this.navbar.attached();
-  }*/
+
     
 }

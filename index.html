@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Aurelia</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
@@ -12,12 +13,13 @@
    window.serverargs = {
      topnav: [
        {url: '/', title: 'Big Home', isActive: true},
-       {url: '/other', title: 'Other Page'},
+       {url: '/other', title: 'Other Page', isActive: false},
      ]
    };
  </script>
  
 
     <script src="scripts/vendor-bundle.js" data-main="aurelia-bootstrapper"></script>
+    <script src="scripts/materialize-bundle.js"></script>
   </body>
 </html>

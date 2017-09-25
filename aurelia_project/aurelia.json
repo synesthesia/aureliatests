@@ -72,8 +72,37 @@
             "main": "aurelia-testing",
             "env": "dev"
           },
-          "text",
-          "materialize-css"
+          "text"
+        ]
+      },
+      {
+        "name": "materialize-bundle.js",
+        "dependencies": [
+          "jquery",
+          {
+            "name": "materialize-css",
+            "path": "../node_modules/materialize-css/dist",
+            "main": "js/materialize.amd",
+            "deps": [
+              "jquery"
+            ],
+            "resources": [
+              "css/materialize.css"
+            ],
+            "exports": "Materialize"
+          },
+          {
+            "name": "aurelia-materialize-bridge",
+            "path": "../node_modules/aurelia-materialize-bridge/dist/amd",
+            "main": "index",
+            "deps": [
+              "jquery"
+            ],
+            "resources": [
+              "**/*.{css,html}",
+              "index.js"
+            ]
+          }
         ]
       }
     ],
@@ -88,7 +117,7 @@
             ".html",
             ".css"
           ],
-          "stub": true
+          "stub": false 
         }
       ]
     }
