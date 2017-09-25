@@ -15,7 +15,7 @@ import { bindable, bindingMode, InlineViewStrategy, customElement } from 'aureli
 
 import { Router, RouterConfiguration } from 'aurelia-router';
 
-@customElement('navbartwo')
+@customElement('navbar')
 export class Navbar {
     
 
@@ -27,11 +27,11 @@ export class Navbar {
     template : string;
 
     constructor(){
-        console.log('navbartwo constructor');
+        console.log('navbar constructor');
     }
 
     attached() {
-        console.debug('navbartwo attached');
+        console.debug('navbar attached');
         this.render();
     }
 
