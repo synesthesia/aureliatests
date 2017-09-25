@@ -1,12 +1,34 @@
+declare global {
+  interface Window { serverargs: ServerArgs; }
+  interface ServerArgs {
+      topnav: NavItem[]
+  }
+  interface NavItem{
+      url: any,
+      title: any,
+      isActive: boolean
+  }
+}
+
+
 import { Aurelia, PLATFORM } from 'aurelia-framework';
 import { Router, RouterConfiguration } from 'aurelia-router';
-import {topNav} from 'server-args';
+import { Navbar } from './components/navbar/navbar';
+
 
 export class App {
   router: Router;
-
+  navbar: Navbar;
   message = 'Hello World!!';
+  topnav: NavItem[];
+  
 
+  constructor(){
+    this.topnav = window.serverargs.topnav;
+    this.navbar = new Navbar();
+  }
+
+  
   configureRouter(config: RouterConfiguration, router: Router) {
     
     config.title = 'Test router';
@@ -32,5 +54,12 @@ export class App {
     ]);
     this.router = router;
   }
+/*
+  attached(){
+    console.debug('app.attached()');
+    this.navbar.router = this.router;
+    this.navbar.topnav = this.topnav;
+    //this.navbar.attached();
+  }*/
     
 }

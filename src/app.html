@@ -1,9 +1,10 @@
 <template>
-    <require from="components/navbar/navbar.html"></require>
+    <require from="./components/navbar/navbar.html"></require>
   <h1>${message}</h1>
 
     <div>
-        <navbar router.bind="router"></navbar>
+        <navbar router.bind="router" topnav.bind="topnav"></navbar>
+        <!--<navbar router.bind="router" ></navbar>-->
   </div>
 
   <div>

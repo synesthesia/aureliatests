@@ -1,4 +1,9 @@
-<template bindable="router">
+<template bindable="topnav, router">
+    <div class="nav">
+        <ul>
+            <li repeat.for = "navitem of topnav">${navitem.title}</li>
+        </ul>
+    </div>
     <div class="secondary-nav">
         <ul >
             <!-- here -->
@@ -9,4 +14,5 @@
             </li>
         </ul>
     </div>
+
 </template>
