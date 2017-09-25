@@ -1,0 +1,12 @@
+<template>
+        <div class="secondary-nav">
+                <ul >
+                    <!-- here -->
+                    <li repeat.for = "row of router.navigation" class="${ row.isActive ? 'link-active' : '' }" >
+                        <a href.bind = "row.href">
+                            <span class="glyphicon glyphicon-${ row.settings.icon }"></span> ${ row.title }
+                        </a>
+                    </li>
+                </ul>
+            </div>
+</template>

@@ -1,18 +1,22 @@
 <template bindable="topnav, router">
-    <div class="nav">
-        <ul>
-            <li repeat.for = "navitem of topnav">${navitem.title}</li>
-        </ul>
-    </div>
-    <div class="secondary-nav">
-        <ul >
-            <!-- here -->
-            <li repeat.for = "row of router.navigation" class="${ row.isActive ? 'link-active' : '' }" >
-                <a href.bind = "row.href">
-                    <span class="glyphicon glyphicon-${ row.settings.icon }"></span> ${ row.title }
-                </a>
+    <ul id="dropdown1" class="dropdown-content" >
+        <!-- here -->
+        <li repeat.for = "row of router.navigation" class="${ row.isActive ? 'link-active' : '' }" >
+            <a href.bind = "row.href">
+                <span class="glyphicon glyphicon-${ row.settings.icon }"></span> ${ row.title }
+            </a>
+        </li>
+    </ul>
+            
+
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li repeat.for = "navitem of topnav">
+                <a  ${navitem.isActive ? 'class="dropdown-button" data-activates="dropdown1"':'href=${navitem.url}'} >${navitem.title}</a> ${navitem.isActive ? 'Active' : ''}
             </li>
         </ul>
     </div>
+    
 
 </template>
